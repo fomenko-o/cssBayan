@@ -2,26 +2,42 @@
     background-color: grey;
 }
 
+.accordion:hover{
+    color: white;
+}
+
+.accordion:hover .hide-btn_label{
+    opacity: 1;
+    transition: all 1s;
+}
+
 .accordion-item {
     display: flex;
     overflow: hidden;
 }
 
-.accordion-item_radio {
+.accordion-item_radio, .hide-btn_radio {
   display: none;
 }
 
-.accordion-item_label, .accordion-item_label:has(.hide-btn_checkbox:checked) {
+.accordion-item_label { 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     width:100%;
     height: 4em;
     background-color: rgb(161, 127, 127);
     transition: height 1s;
 }
 
+.accordion-item_label img { 
+    height: 20em;
+    width: fit-content;
+    align-self: center;
+}
+
 .accordion-item_radio:checked + .accordion-item_label,
-.accordion-item_radio:hover + .accordion-item_label{
+.accordion-item_radio:hover + .accordion-item_label,
+.accordion-item:hover .accordion-item_label{
     background-color:blue;
     color: white;
     height: 30em;
@@ -29,25 +45,23 @@
 }
 
 
-.accordion-item_label:has(.hide-btn_checkbox:checked) {
-    background-color: aqua;
-    height: 4em;
-}
-
-.accordion-item_label:has(.hide-btn_checkbox:checked):hover {
-    background-color:blue;
-    color: white;
-    height: 30em;
-    transition: height 1s;
-}
 
 .hide-btn_label {
     background-color: black;
-    display: none;
+    opacity: 0;
+    transition: all 1s;
+    /* display: none; */
+}
+
+.accordion-item:has(.accordion-item_radio:hover) .hide-btn_label{
+    opacity: 1;
+    transition: all 1s;
 }
 
 
-.accordion-item:has(.accordion-item_radio:checked) .hide-btn_label {
+.accordion-item:has(.accordion-item_radio:checked) .hide-btn_label,
+.accordion-item:hover .hide-btn_label{
     background-color: green;
     display: flex;
+    opacity: 1;
 }
