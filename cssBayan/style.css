@@ -30,6 +30,7 @@ h2 {
   padding: 0.5em 0;
 }
 
+
 .accordion:hover {
   color: var(--hover-accent);
   --opacity: 1;
@@ -47,11 +48,11 @@ h2 {
   padding: 1em 1em 1em 0;
   display: flex;
   overflow: hidden;
-  border-top: 1px solid rgb(198, 212, 212);
+  border-top: 0.1em solid rgb(198, 212, 212);
 }
 
 .accordion-item:last-of-type {
-  border-bottom: 1px solid rgb(198, 212, 212);
+  border-bottom: 0.1em solid rgb(198, 212, 212);
 }
 
 .accordion-item_radio,
@@ -92,6 +93,7 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   opacity: var(--opacity);
+  transition: all 1s;
 }
 
 .accordion-item:has(.accordion-item_radio:checked) .hide-btn_label,
@@ -104,6 +106,18 @@ h2 {
 
 .accordion-item:active {
   --hover-main: var(--green);
+}
+
+@media (hover: hover){
+    .accordion-item:active img {
+        width: 22em;
+        height: auto;
+        opacity: 0.6;
+      }
+
+      .accordion-item:hover img {
+        opacity: 0.8;
+      }
 }
 
 
@@ -134,6 +148,7 @@ h2 {
   }
 
 
+}
 
 @media (max-width: 320px) {
   body {
