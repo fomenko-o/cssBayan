@@ -88,7 +88,7 @@ h2 {
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  background-image: url(/img/cross.png);
+  background-image: url("img/cross.png");
   background-size: 60%;
   background-position: center;
   background-repeat: no-repeat;
