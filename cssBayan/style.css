@@ -1,0 +1,40 @@
+.accordion {
+    background-color: grey;
+}
+
+.accordion-item {
+    display: flex;
+    overflow: hidden;
+}
+
+.accordion-item_radio {
+  display: none;
+}
+
+.accordion-item_label {
+    width:100%;
+    height: 4em;
+    background-color: rgb(161, 127, 127);
+    transition: height 1s;
+}
+
+.accordion-item_radio:checked + .accordion-item_label,
+.accordion-item_radio:hover + .accordion-item_label{
+    background-color:blue;
+    color: white;
+    height: 30em;
+    transition: height 1s;
+}
+
+.hide-btn_label {
+    background-color:red;
+}
+
+.hide-btn_checkbox {
+    display: none;
+}
+
+.accordion-item_label:has(.hide-btn_checkbox:checked) {
+    background-color: aqua;
+    height: 40em;
+}
