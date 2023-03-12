@@ -11,7 +11,9 @@
   display: none;
 }
 
-.accordion-item_label {
+.accordion-item_label, .accordion-item_label:has(.hide-btn_checkbox:checked) {
+    display: flex;
+    justify-content: space-between;
     width:100%;
     height: 4em;
     background-color: rgb(161, 127, 127);
@@ -26,15 +28,26 @@
     transition: height 1s;
 }
 
-.hide-btn_label {
-    background-color:red;
-}
-
-.hide-btn_checkbox {
-    display: none;
-}
 
 .accordion-item_label:has(.hide-btn_checkbox:checked) {
     background-color: aqua;
-    height: 40em;
+    height: 4em;
+}
+
+.accordion-item_label:has(.hide-btn_checkbox:checked):hover {
+    background-color:blue;
+    color: white;
+    height: 30em;
+    transition: height 1s;
+}
+
+.hide-btn_label {
+    background-color: black;
+    display: none;
+}
+
+
+.accordion-item:has(.accordion-item_radio:checked) .hide-btn_label {
+    background-color: green;
+    display: flex;
 }
